@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Address extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'postal_code',
+        'prefecture',
+        'city',
+        'address_line',
+        'building_name',
+        'phone_number',
+    ];
+
+    // 所有ユーザー
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}

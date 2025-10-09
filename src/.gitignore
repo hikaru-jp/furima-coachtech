@@ -1,15 +1,47 @@
+# Node modules
 /node_modules
+
+# Laravel public関連（自動生成ファイル）
 /public/hot
 /public/storage
+/public/vendor
+
+# Storage・キャッシュ関連
 /storage/*.key
+/storage/logs/*.log
+
+# Vendor（composer installで再生成される）
 /vendor
+
+# 環境ファイル
 .env
 .env.backup
+.env.local
+.env.*.local
+
+# PHPUnitキャッシュ
 .phpunit.result.cache
+
+# Docker関連
 docker-compose.override.yml
+mysql/
+nginx/
+php/
+
+# Homestead
 Homestead.json
 Homestead.yaml
+
+# npm/yarn関連ログ
 npm-debug.log
 yarn-error.log
-/.idea
-/.vscode
+
+# IDE・エディタ
+.idea/
+.vscode/
+
+# 秘密鍵ファイル（ペンファイル）
+*.pem
+
+# OS関連（Mac）
+.DS_Store
