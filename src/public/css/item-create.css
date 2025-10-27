@@ -1,0 +1,146 @@
+
+.item-create-wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 40px;
+}
+
+.header-logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.header-search {
+  flex: 1;
+  margin: 0 40px;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.header-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.header-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-menu a:hover {
+  text-decoration: underline;
+}
+
+.item-create-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.item-create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 30px;
+  background-color: #fafafa;
+}
+
+.image-upload label {
+  color: #ff6b6b;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.image-upload input {
+  display: none;
+}
+
+.category-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-tag {
+  border: 1px solid #ff6b6b;
+  color: #ff6b6b;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 13px;
+}
+
+.category-tag:hover,
+.category-tag.active {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.select-section select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.item-create-form input[type="text"],
+.item-create-form input[type="number"],
+.item-create-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.item-create-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.item-create-submit {
+  margin-top: 30px;
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.item-create-submit:hover {
+  background-color: #ff4d4d;
+}
+

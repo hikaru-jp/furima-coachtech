@@ -45,3 +45,6 @@ yarn-error.log
 
 # OS関連（Mac）
 .DS_Store
+
+# Dockerで生成されるMySQLデータは追跡しない
+docker/mysql/data/

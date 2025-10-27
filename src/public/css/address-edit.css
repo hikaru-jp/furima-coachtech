@@ -1,0 +1,77 @@
+.address-edit-wrapper {
+width: 100%;
+max-width: 600px;
+margin: 60px auto;
+padding: 20px;
+font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 検索（右側） */
+.header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #000;
+color: #fff;
+height: 70px;
+padding: 0 40px;
+}
+
+.header-logo img {
+height: 40px;
+display: block;
+}
+
+/* 検索フォーム */
+.header-search {
+flex: 1;
+display: flex;
+justify-content: center;
+}
+
+.header-search input {
+width: 400px;
+height: 36px;
+border: none;
+border-radius: 6px;
+padding: 0 12px;
+font-size: 14px;
+box-sizing: border-box;
+}
+
+/* メニュー（右側） */
+.header-menu {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.header-menu a,
+.header-menu button {
+color: #fff;
+text-decoration: none;
+background: none;
+border: none;
+font-size: 14px;
+cursor: pointer;
+}
+
+.header-menu a:hover,
+.header-menu button:hover {
+text-decoration: underline;
+}
+
+
+.address-edit-title {
+text-align: center;
+font-size: 24px;
+font-weight: bold;
+margin-top: 40px;
+margin-bottom: 30px;
+}
+
+.address-edit-form {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}

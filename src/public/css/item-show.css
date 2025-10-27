@@ -1,0 +1,215 @@
+
+.item-show-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  background-color: #fff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 40px;
+}
+
+.header-logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header-search {
+  flex: 1;
+  margin: 0 40px;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+.header-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.header-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-menu a:hover {
+  text-decoration: underline;
+}
+
+
+.item-detail {
+  display: flex;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+
+.item-image-box {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.item-image {
+  width: 400px;
+  height: 400px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+
+.item-info {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.item-brand {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.item-price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.item-price .tax {
+  font-size: 13px;
+  color: #555;
+}
+
+.buy-btn {
+  display: inline-block;
+  background-color: #ff6b6b;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 30px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.buy-btn:hover {
+  background-color: #ff4d4d;
+}
+
+
+
+.item-description h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.item-description p {
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+
+.item-info-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.item-info-section p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+.item-comment-section {
+  margin-top: 40px;
+}
+
+.item-comment-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+
+.comment {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+}
+
+.comment-user {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.comment-text {
+  font-size: 14px;
+  color: #555;
+}
+
+
+.comment-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.comment-form textarea {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  resize: vertical;
+  margin-bottom: 16px;
+}
+
+.comment-submit {
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.comment-submit:hover {
+  background-color: #ff4d4d;
+}
+
