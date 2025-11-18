@@ -2,7 +2,7 @@
 
 ## ER 図
 
-![ER図](./furima_ER.png)
+![ER図](./furima_ERdiagram.png)
 
 # 環境構築
 
