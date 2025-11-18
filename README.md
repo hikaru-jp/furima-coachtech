@@ -8,17 +8,17 @@
 
 ## Docker ビルド
 
-git clone https://github.com/hikaru-jp/furima-coachtech.git
-docker-compose up -d --build
+- `git clone https://github.com/hikaru-jp/furima-coachtech.git`
+- `docker-compose up -d --build`
 
 ## Laravel 初期設定
 
-docker-compose exec php bash
-composer install
-cp .env.example .env
-php artisan key:generate
-php artisan migrate
-php artisan db:seed
+- `docker-compose exec php bash`
+- `composer install`
+- `cp .env.example .env`
+- `php artisan key:generate`
+- `php artisan migrate`
+- `php artisan db:seed`
 
 ## 開発環境
 
