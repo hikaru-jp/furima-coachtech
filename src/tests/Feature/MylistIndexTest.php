@@ -24,7 +24,7 @@ class MylistIndexTest extends TestCase
         $response->assertStatus(200);
     }
 
-   public function test_only_favorited_items_are_displayed()
+    public function test_only_favorited_items_are_displayed()
     {
         $this->seed();
 
@@ -54,7 +54,6 @@ class MylistIndexTest extends TestCase
     }
 
     public function test_sold_label_is_displayed_for_favorited_sold_items()
-
     {
         $this->seed();
 

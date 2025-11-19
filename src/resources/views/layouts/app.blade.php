@@ -12,35 +12,24 @@
 </head>
 
 <body>
-
-
     <header class="global-header">
         <div class="header-left">
             <a href="{{ route('items.index') }}">
                 <img src="{{ asset('images/coachtech-logo.svg') }}" alt="ロゴ" class="header-logo">
             </a>
-
-
             <form action="{{ route('items.index') }}" method="GET" class="search-box">
                 <input type="text" name="keyword" placeholder="なにをお探しですか？" value="{{ request('keyword') }}">
             </form>
         </div>
-
         <nav class="header-right">
-
             <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                 @csrf
                 <button type="submit" class="logout-btn">ログアウト</button>
             </form>
-
-
             <a href="{{ route('mypage.index') }}" class="menu-link">マイページ</a>
-
-
             <a href="{{ route('item.create') }}" class="sell-btn">出品</a>
         </nav>
     </header>
-
     <main>
         @yield('content')
     </main>

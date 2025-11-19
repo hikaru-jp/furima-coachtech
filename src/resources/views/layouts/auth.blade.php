@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <header class="global-header">
         <div class="header-logo">
             <a href="{{ url('/') }}">
@@ -22,7 +21,6 @@
             </a>
         </div>
     </header>
-
     <main>
         @yield('content')
     </main>

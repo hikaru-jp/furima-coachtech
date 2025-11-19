@@ -11,10 +11,6 @@ use App\Models\Purchase;
 
 class MyPageController extends Controller
 {
-    /**
-     * マイページトップ
-     * GET /mypage?page=sell or ?page=buy
-     */
     public function index(Request $request)
     {
         $user = Auth::user();
@@ -29,20 +25,12 @@ class MyPageController extends Controller
         return view('mypage.index', compact('user', 'page', 'items'));
     }
 
-    /**
-     * プロフィール編集画面
-     * GET /mypage/profile
-     */
     public function edit()
     {
         $user = Auth::user();
         return view('mypage.profile', compact('user'));
     }
 
-    /**
-     * プロフィール更新処理
-     * POST /mypage/profile
-     */
     public function update(ProfileRequest $request)
     {
         $user = Auth::user();

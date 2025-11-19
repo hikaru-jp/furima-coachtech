@@ -18,7 +18,6 @@ class AddressController extends Controller
         ]);
     }
 
-    // 住所更新処理
     public function update(AddressRequest $request, $item_id)
     {
         $item_id = (int) preg_replace('/[^0-9]/', '', $request->item_id ?? $item_id);

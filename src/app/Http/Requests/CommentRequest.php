@@ -8,7 +8,7 @@ class CommentRequest extends FormRequest
 {
     public function authorize(): bool
     {
-         return true;
+        return true;
     }
 
     public function rules(): array
@@ -17,9 +17,8 @@ class CommentRequest extends FormRequest
             'content' => ['required', 'string', 'max:255'],
         ];
     }
-     protected function getRedirectUrl()
+    protected function getRedirectUrl()
     {
         return route('items.show', ['item_id' => $this->route('item_id')]);
     }
 }
-

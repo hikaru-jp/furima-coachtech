@@ -2,148 +2,140 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
 * {
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+box-sizing: border-box;
 }
 
-html,
-body {
-    margin: 0;
-    height: 100%;
-    background-color: #fff;
+html, body {
+margin: 0;
+height: 100%;
+background-color: #fff;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+text-decoration: none;
+color: inherit;
 }
 
 button:focus-visible {
-    outline: 2px solid #4a90e2 !important;
-    outline: -webkit-focus-ring-color auto 5px !important;
+outline: 2px solid #4a90e2 !important;
+outline: -webkit-focus-ring-color auto 5px !important;
 }
 
-/* --------------------------
-   レスポンシブ
---------------------------- */
 
-/* --- PC: 1400〜1540px --- */
-@media (min-width: 1400px) and (max-width: 1540px) {
-    body {
-        max-width: 1540px;
-        margin: 0 auto;
-    }
 
-    .global-header {
-        padding: 10px 20px;
-    }
-
-    .search-box input {
-        width: 300px;
-    }
-
-    .header-right {
-        gap: 24px;
-    }
-}
-
-/* --- タブレット: 768〜850px --- */
 @media (min-width: 768px) and (max-width: 850px) {
-    body {
-        font-size: 15px;
-        padding: 10px;
-    }
-
-    .global-header {
-        padding: 10px 16px;
-    }
-
-    .header-logo {
-        height: 32px;
-    }
-
-    .search-box input {
-        width: 240px;
-        height: 34px;
-    }
-
-    .header-right {
-        gap: 20px;
-    }
-
-    .menu-link,
-    .logout-btn {
-        font-size: 13px;
-    }
-
-    .sell-btn {
-        width: 70px;
-        height: 32px;
-        font-size: 12px;
-    }
+body {
+font-size: 15px;
+padding: 10px;
 }
 
-/* --------------------------
-   PCデフォルト
---------------------------- */
 .global-header {
-    width: 100%;
-    height: 80px;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 40px;
+padding: 10px 16px;
+flex-wrap: wrap;
+justify-content: center;
 }
 
 .header-left {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+width: 100%;
+justify-content: center;
+gap: 16px;
 }
 
 .header-logo {
-    height: 40px;
-    width: auto;
-    display: block;
+height: 32px;
 }
 
 .search-box input {
-    width: 370px;
-    height: 36px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0 10px;
-    box-sizing: border-box;
+width: 240px;
+height: 34px;
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+width: 100%;
+justify-content: center;
+gap: 20px;
 }
 
+.menu-link,
 .logout-btn {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.menu-link {
-    font-size: 14px;
-    color: #fff;
+font-size: 13px;
 }
 
 .sell-btn {
-    width: 80px;
-    height: 36px;
-    background: #fff;
-    color: #000;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
+width: 70px;
+height: 32px;
+font-size: 12px;
+}
+}
+
+@media (min-width: 1400px) and (max-width: 1540px) {
+body {
+max-width: 1540px;
+margin: 0 auto;
+}
+}
+
+
+
+.global-header {
+width: 100%;
+height: 80px;
+background: #000;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 40px;
+}
+
+.header-left {
+display: flex;
+align-items: center;
+gap: 40px;
+}
+
+.header-logo {
+height: 40px;
+width: auto;
+max-width: 100%;
+display: block;
+}
+
+.search-box input {
+width: 370px;
+height: 36px;
+border: 1px solid #ccc;
+border-radius: 4px;
+padding: 0 10px;
+}
+
+.header-right {
+display: flex;
+align-items: center;
+gap: 32px;
+}
+
+.logout-btn {
+background: none;
+border: none;
+color: #fff;
+font-size: 14px;
+cursor: pointer;
+}
+
+.menu-link {
+font-size: 14px;
+color: #fff;
+}
+
+.sell-btn {
+width: 80px;
+height: 36px;
+background: #fff;
+color: #000;
+border-radius: 4px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 14px;
 }
