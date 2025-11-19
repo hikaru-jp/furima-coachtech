@@ -9,41 +9,37 @@ class Item extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'category_id',
-        'name',
-        'description',
-        'price',
-        'image_path',
-        'status',
-    ];
+    protected $fillable = ['user_id', 'name', 'brand', 'description', 'price', 'condition', 'img_url', 'is_sold'];
 
-    // 出品者
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // カテゴリー
-    public function category()
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class, 'category_item');
     }
 
-    // コメント
     public function comments()
     {
         return $this->hasMany(Comment::class);
     }
 
-    // いいね
     public function favorites()
     {
         return $this->hasMany(Favorite::class);
     }
 
-    // 購入履歴
+    public function isLikedBy($user)
+    {
+        if (!$user) {
+            return false;
+        }
+
+        return $this->favorites->where('user_id', $user->id)->isNotEmpty();
+    }
+
     public function purchases()
     {
         return $this->hasMany(Purchase::class);

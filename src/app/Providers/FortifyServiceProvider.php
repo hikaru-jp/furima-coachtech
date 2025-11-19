@@ -67,7 +67,7 @@ class FortifyServiceProvider extends ServiceProvider
             return new class implements RegisterResponse {
                 public function toResponse($request)
                 {
-                    return Redirect::route('login');
+                    return Redirect::route('mypage.profile');
                 }
             };
         });
@@ -78,12 +78,10 @@ class FortifyServiceProvider extends ServiceProvider
                 {
                     $user = $request->user();
 
-                    // プロフィール未設定
                     if (!$user->is_profile_completed) {
-                        return Redirect::route('profile.setup');
+                        return Redirect::route('mypage.profile');
                     }
 
-                    // 通常ログイン時
                     return Redirect::route('mypage.index');
                 }
             };
@@ -92,7 +90,6 @@ class FortifyServiceProvider extends ServiceProvider
             return new class implements LogoutResponse {
                 public function toResponse($request)
                 {
-                    // ログアウト後にログイン画面へリダイレクト
                     return Redirect::route('login');
                 }
             };

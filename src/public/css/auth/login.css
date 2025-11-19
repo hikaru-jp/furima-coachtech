@@ -42,7 +42,7 @@ margin-bottom: 28px;
 text-align: center;
 }
 
-/* 入力フォーム*/
+
 
 .form-group {
 margin-bottom: 18px;
@@ -83,7 +83,7 @@ transition: background 0.3s;
 background-color: #ff4d4d;
 }
 
-/* 会員登録リンク */
+
 .register-link {
 margin-top: 15px;
 text-align: center;
@@ -99,10 +99,10 @@ font-size: 14px;
 text-decoration: underline;
 }
 
-/* エラーメッセージ */
+
 .error-message {
-  color: #E60033; 
-  margin-top: 4px;
-  margin-bottom: 4px;
-  line-height: 1.4;
+color: #E60033;
+margin-top: 4px;
+margin-bottom: 4px;
+line-height: 1.4;
 }

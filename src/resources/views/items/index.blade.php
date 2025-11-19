@@ -1,61 +1,36 @@
 @extends('layouts.app')
 
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/item.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/unit-item.css') }}">
 @endpush
 
 @section('content')
     <div class="item-list-wrapper">
-
-        <div class="header-search">
-            <input type="text" placeholder="なにをお探しですか？">
+        <div class="tab-menu">
+            <a href="{{ route('items.index', ['tab' => 'recommend', 'keyword' => request('keyword')]) }}"
+                class="{{ request('tab') !== 'mylist' ? 'active' : '' }}">
+                おすすめ
+            </a>
+            @if (Auth::check())
+                <a href="{{ route('items.index', ['tab' => 'mylist', 'keyword' => request('keyword')]) }}"
+                    class="{{ request('tab') === 'mylist' ? 'active' : '' }}">
+                    マイリスト
+                </a>
+            @else
+                <span class="tab">マイリスト</span>
+            @endif
         </div>
-
-        <nav class="header-menu">
-            <a href="{{ route('login') }}">ログイン</a>
-            <a href="{{ route('mypage.index') }}">マイページ</a>
-          <a href="{{ route('item.create') }}">出品</a>
-        </nav>
-
-        <!-- タブメニュー -->
-        <div class="item-tab-menu">
-            <span class="tab active">おすすめ</span>
-            <span class="tab">マイリスト</span>
-        </div>
-
-        <!-- 商品一覧（仮） -->
         <div class="item-grid">
-            <div class="item-card">
-                <div class="item-image">商品画像</div>
-                <p class="item-name">商品名</p>
-            </div>
-
-            <div class="item-card">
-                <div class="item-image">商品画像</div>
-                <p class="item-name">商品名</p>
-            </div>
-
-            <div class="item-card">
-                <div class="item-image">商品画像</div>
-                <p class="item-name">商品名</p>
-            </div>
-
-            <div class="item-card">
-                <div class="item-image">商品画像</div>
-                <p class="item-name">商品名</p>
-            </div>
-
-            <div class="item-card">
-                <div class="item-image">商品画像</div>
-                <p class="item-name">商品名</p>
-            </div>
-
-            <div class="item-card">
-                <div class="item-image">商品画像</div>
-                <p class="item-name">商品名</p>
-            </div>
+            @php use Illuminate\Support\Str; @endphp
+            @foreach ($items as $item)
+                <div class="item-card">
+                    <x-unit-item :item="$item" />
+                    @if (in_array($item->id, $myPurchasedItemIds))
+                        <span class="sold-label">Sold</span>
+                    @endif
+                </div>
+            @endforeach
         </div>
-
     </div>
 @endsection

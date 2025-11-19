@@ -4,41 +4,45 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ProfileRequest;
 
 class ProfileController extends Controller
 {
-    /**
-     * プロフィール設定画面（初回ログイン時表示）
-     */
-    public function setup()
+    public function edit()
     {
         $user = Auth::user();
         return view('mypage.profile', compact('user'));
     }
 
-    /**
-     * プロフィール情報の更新処理
-     */
-    public function update(Request $request)
+    public function update(ProfileRequest $request)
     {
         $user = Auth::user();
 
-        // プロフィール画像の保存（選択された場合のみ）
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('profile_images', 'public');
-            $user->image_path = $path;
+        if ($request->hasFile('profile_image')) {
+            if ($user->img_url && Storage::disk('public')->exists($user->img_url)) {
+                Storage::disk('public')->delete($user->img_url);
+            }
+
+            $path = $request->file('profile_image')->store('profile_images', 'public');
+            $user->img_url = $path;
         }
 
-        //  各項目を更新
         $user->name = $request->input('name');
-        $user->postal_code = $request->input('postal_code');
-        $user->address = $request->input('address');
-        $user->building = $request->input('building');
+
         $user->is_profile_completed = true;
 
         $user->save();
 
-        // 更新後マイページへリダイレクト
-        return redirect()->route('mypage.index')->with('success', 'プロフィールを更新しました！');
+        $user->address()->updateOrCreate(
+            ['user_id' => $user->id],
+            [
+                'postal_code' => $request->input('postal_code'),
+                'address_line' => $request->input('address_line'),
+                'building_name' => $request->input('building_name'),
+            ],
+        );
+
+        return redirect()->route('mypage.profile');
     }
 }

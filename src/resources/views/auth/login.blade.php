@@ -1,7 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.auth')
 
 @push('css')
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/auth/login.css') }}">
 @endpush
 

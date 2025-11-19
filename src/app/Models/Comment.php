@@ -9,19 +9,13 @@ class Comment extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'item_id',
-        'body',
-    ];
+    protected $fillable = ['user_id', 'item_id', 'content'];
 
-    // コメントしたユーザー
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // 対象の商品
     public function item()
     {
         return $this->belongsTo(Item::class);

@@ -9,13 +9,10 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-    ];
+    protected $fillable = ['name'];
 
-    // カテゴリーに属する商品（1対多）
     public function items()
     {
-        return $this->hasMany(Item::class);
+        return $this->belongsToMany(Item::class, 'category_item');
     }
 }

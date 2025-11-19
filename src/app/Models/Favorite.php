@@ -9,18 +9,13 @@ class Favorite extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'item_id',
-    ];
+    protected $fillable = ['user_id', 'item_id'];
 
-    // いいねしたユーザー
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // 対象の商品
     public function item()
     {
         return $this->belongsTo(Item::class);

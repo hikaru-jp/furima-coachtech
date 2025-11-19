@@ -15,9 +15,10 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // 購入者
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('item_id')->constrained('items')->onDelete('cascade');
-            $table->string('status', 50)->default('pending'); // 状態管理
+            $table->string('payment_method')->nullable();
+            $table->string('status', 50)->default('pending');
             $table->timestamps();
         });
     }
