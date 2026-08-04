@@ -38,13 +38,19 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/item/{item_id}/comment', [CommentController::class, 'store'])->name('comments.store');
 });
 
-// 購入
 Route::middleware('auth')->group(function () {
     Route::get('/purchase/{item_id}', [PurchaseController::class, 'create'])->name('purchase.create');
+
     Route::post('/purchase/{item_id}', [PurchaseController::class, 'store'])->name('purchase.store');
+
     Route::post('/purchase/{item_id}/checkout', [PurchaseController::class, 'checkout'])->name('purchase.checkout');
+
     Route::get('/purchase/{item_id}/after_stripe', [PurchaseController::class, 'afterStripe'])->name('purchase.after_stripe');
 });
+
+
+
+
 
 // 住所変更
 Route::get('/purchase/address/{item_id}', [AddressController::class, 'edit'])

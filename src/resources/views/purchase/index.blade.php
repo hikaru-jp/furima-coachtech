@@ -80,10 +80,18 @@
                 </div>
 
 
-                <form action="{{ route('purchase.checkout', ['item_id' => $item->id]) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="purchase-btn">購入する</button>
-                </form>
+               <form action="{{ route('purchase.checkout', ['item_id' => $item->id]) }}" method="POST">
+
+    @csrf
+    <button
+    type="submit"
+    form="address-form"
+    class="purchase-btn"
+>
+    購入する
+</button>
+</form>
+
             </aside>
 
         </div>
